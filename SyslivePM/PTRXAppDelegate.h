@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class PTRXWizardViewController;
+
 @interface PTRXAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) PTRXWizardViewController *wizardController;
 
 @end

@@ -7,12 +7,18 @@
 //
 
 #import "PTRXAppDelegate.h"
+#import "PTRXWizardViewController.h"
 
 @implementation PTRXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.wizardController = [[PTRXWizardViewController alloc] initWithNibName:@"PTRXWizardViewController" bundle:nil];
+    self.window.rootViewController = self.wizardController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

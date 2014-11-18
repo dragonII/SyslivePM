@@ -1,5 +1,5 @@
 //
-//  PTRXViewController.h
+//  PTRXWizardViewController.h
 //  SyslivePM
 //
 //  Created by Wang Long on 11/18/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PTRXViewController : UIViewController
+@interface PTRXWizardViewController : UIViewController
 
 @end

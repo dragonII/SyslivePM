@@ -14,17 +14,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /*
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    // Using WizardControll as root
     self.wizardController = [[PTRXWizardViewController alloc] initWithNibName:@"PTRXWizardViewController" bundle:nil];
     self.window.rootViewController = self.wizardController;
     
-    /*
-    self.loginController = [[PTRXLoginViewController alloc] initWithNibName:@"PTRXLoginViewController" bundle:nil];
-    self.window.rootViewController = self.loginController;
-     */
+    // Using LoginControll as root
+    //self.loginController = [[PTRXLoginViewController alloc] initWithNibName:@"PTRXLoginViewController" bundle:nil];
+    //self.window.rootViewController = self.loginController;
+    
     
     [self.window makeKeyAndVisible];
+     */
+    
     
     return YES;
 }

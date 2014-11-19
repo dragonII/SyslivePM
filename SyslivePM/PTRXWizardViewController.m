@@ -7,6 +7,7 @@
 //
 
 #import "PTRXWizardViewController.h"
+#import "PTRXLoginViewController.h"
 
 const int TotalNumPages = 3;
 
@@ -14,6 +15,7 @@ const int TotalNumPages = 3;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end
 
@@ -21,6 +23,8 @@ const int TotalNumPages = 3;
 {
     BOOL _firstTime;
     UIStatusBarStyle _statusBarStyle;
+    PTRXLoginViewController *_loginViewController;
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -32,7 +36,6 @@ const int TotalNumPages = 3;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _firstTime = YES;
     }
     return self;
 }
@@ -46,11 +49,16 @@ const int TotalNumPages = 3;
 {
     [super viewDidLoad];
     
-    [self addSwipeGestureToScrollView];
+    
+    //NSLog(@"Setting _firstTime");
+    _firstTime = YES;
+    
+    //[self addSwipeGestureToScrollView];
 }
 
 - (void)viewWillLayoutSubviews
 {
+    NSLog(@"viewWillLayoutSubviews");
     [super viewWillLayoutSubviews];
     
     if(_firstTime)
@@ -63,6 +71,7 @@ const int TotalNumPages = 3;
 
 - (void)initScrollView
 {
+    NSLog(@"initScrollView");
     //self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width * TotalNumPages, self.scrollView.bounds.size.height);
     self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -73,6 +82,7 @@ const int TotalNumPages = 3;
     self.pageControl.currentPage = 0;
     
     [self addButtonsToScrollView];
+    self.testLabel.text = @"ABCDEFG";
     [self addSwipeGestureToScrollView];
 
 }
@@ -86,17 +96,20 @@ const int TotalNumPages = 3;
 
 - (void)horizontalSwipe:(UIGestureRecognizer *)recognizer
 {
+    NSLog(@"Swipe detected");
     NSInteger currentPage = self.pageControl.currentPage;
     CGFloat width = self.scrollView.bounds.size.width;
     
     if(currentPage == TotalNumPages - 1)
     {
-        NSLog(@"Last Page");
+        [self showLoginController];
+        [self dismissFromParentViewController];
     } else {
         [UIView animateWithDuration:0.3
                          animations:^{
                              self.scrollView.contentOffset = CGPointMake((currentPage + 1) * width, 0);
                          } completion:^(BOOL finished){
+                             NSLog(@"complete");
                              self.pageControl.currentPage++;
                          }];
     }
@@ -146,8 +159,53 @@ const int TotalNumPages = 3;
     
     if(index == TotalNumPages - 1)
     {
-        NSLog(@"Finished");
+        [self showLoginController];
     }
+}
+
+- (void)showLoginController2
+{
+    if(_loginViewController == nil)
+    {
+        _loginViewController = [[PTRXLoginViewController alloc] initWithNibName:@"PTRXLoginViewController" bundle:nil];
+        
+        [self addChildViewController:_loginViewController];
+        
+        [self transitionFromViewController:self
+                          toViewController:_loginViewController
+                                  duration:0.3f
+                                   options:UIViewAnimationOptionShowHideTransitionViews
+                                animations:nil
+                                completion:nil];
+    }
+}
+
+- (void)showLoginController
+{
+    if(_loginViewController == nil)
+    {
+        _loginViewController = [[PTRXLoginViewController alloc] initWithNibName:@"PTRXLoginViewController" bundle:nil];
+        _loginViewController.view.frame = self.view.bounds;
+        _loginViewController.view.alpha = 0.0f;
+        
+        [self.view addSubview:_loginViewController.view];
+        [self addChildViewController:_loginViewController];
+        
+        [self.scrollView removeFromSuperview];
+        [self.pageControl removeFromSuperview];
+        
+        [UIView animateWithDuration:0.3f
+                         animations:^{
+                             _loginViewController.view.alpha = 1.0f;
+                         } completion:^(BOOL finished) {
+                             [_loginViewController didMoveToParentViewController:self];
+                         }];
+    }
+}
+
+- (void)dismissFromParentViewController
+{
+    [self willMoveToParentViewController:nil];
 }
 
 /*
@@ -160,6 +218,12 @@ const int TotalNumPages = 3;
     self.pageControl.currentPage = currentPage;
 }
  */
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    NSLog(@"Wizard will disappear");
+}
 
 
 - (void)didReceiveMemoryWarning

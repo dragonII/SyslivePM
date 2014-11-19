@@ -7,6 +7,7 @@
 //
 
 #import "PTRXLoginViewController.h"
+#import "PTRXMainViewController.h"
 
 @interface PTRXLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -18,6 +19,9 @@
 @end
 
 @implementation PTRXLoginViewController
+{
+    PTRXMainViewController *_mainViewController;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -83,7 +87,15 @@
 
 - (void)gotoNextView
 {
+    NSLog(@"In gotoNextView");
+    if(_mainViewController == nil)
+    {
+        _mainViewController = [[PTRXMainViewController alloc] init];
+    }
     
+    [self.view addSubview:_mainViewController.view];
+    [self addChildViewController:_mainViewController];
+    [_mainViewController didMoveToParentViewController:self];
 }
 
 - (BOOL)loginToServer

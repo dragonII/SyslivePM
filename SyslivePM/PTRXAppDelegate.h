@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class PTRXWizardViewController;
+@class PTRXLoginViewController;
 
 @interface PTRXAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) PTRXWizardViewController *wizardController;
+@property (strong, nonatomic) PTRXLoginViewController *loginController;
 
 @end

@@ -130,7 +130,7 @@ const int TotalNumPages = 3;
 
 - (void)nextButtonPressed:(UIButton *)sender
 {
-    int index = sender.tag - 2000;
+    NSInteger index = sender.tag - 2000;
     CGFloat width = self.scrollView.bounds.size.width;
     
     if(index < TotalNumPages - 1)

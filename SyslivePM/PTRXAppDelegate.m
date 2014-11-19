@@ -8,6 +8,7 @@
 
 #import "PTRXAppDelegate.h"
 #import "PTRXWizardViewController.h"
+#import "PTRXLoginViewController.h"
 
 @implementation PTRXAppDelegate
 
@@ -17,6 +18,12 @@
     
     self.wizardController = [[PTRXWizardViewController alloc] initWithNibName:@"PTRXWizardViewController" bundle:nil];
     self.window.rootViewController = self.wizardController;
+    
+    /*
+    self.loginController = [[PTRXLoginViewController alloc] initWithNibName:@"PTRXLoginViewController" bundle:nil];
+    self.window.rootViewController = self.loginController;
+     */
+    
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -8,18 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class PTRXBlueViewController;
-@class PTRXYellowViewController;
-
 @class PTRXLoginViewController;
 @class PTRXWizardViewController;
+@class PTRXContentNavigationViewController;
 
 @interface PTRXMainViewController : UIViewController
 
-@property (strong, nonatomic) PTRXBlueViewController *blueViewController;
-@property (strong, nonatomic) PTRXYellowViewController *yellowViewController;
-
 @property (strong, nonatomic) PTRXLoginViewController *loginController;
 @property (strong, nonatomic) PTRXWizardViewController *wizardController;
+@property (strong, nonatomic) PTRXContentNavigationViewController *contentNVController;
 
 @end

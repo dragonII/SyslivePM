@@ -1,8 +1,8 @@
 //
-//  PTRXYellowViewController.h
+//  PTRXContentNavigationViewController.h
 //  SyslivePM
 //
-//  Created by Wang Long on 11/19/14.
+//  Created by Wang Long on 11/20/14.
 //  Copyright (c) 2014 Wang Long. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 @class PTRXMainViewController;
 
-@interface PTRXYellowViewController : UIViewController
+@interface PTRXContentNavigationViewController : UIViewController
 
 @property (strong, nonatomic)PTRXMainViewController *mainController;
 

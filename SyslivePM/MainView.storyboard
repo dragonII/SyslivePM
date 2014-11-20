@@ -116,66 +116,23 @@
             </objects>
             <point key="canvasLocation" x="838" y="964"/>
         </scene>
-        <!--Blue View Controller-->
-        <scene sceneID="kr8-wV-Hlq">
+        <!--Content Navigation View Controller-->
+        <scene sceneID="cci-cD-DGR">
             <objects>
-                <viewController storyboardIdentifier="Blue" id="maI-gv-yeS" customClass="PTRXBlueViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentNavigation" id="2nV-Gg-L3c" customClass="PTRXContentNavigationViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="idI-It-3Yc"/>
-                        <viewControllerLayoutGuide type="bottom" id="SQ6-LL-ww9"/>
+                        <viewControllerLayoutGuide type="top" id="EGY-qg-gZS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hq6-kS-RbB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9AW-nu-Tch">
+                    <view key="view" contentMode="scaleToFill" id="1Uq-0V-2CW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhq-Qf-5Sn">
-                                <rect key="frame" x="137" y="214" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.93573794160000001" green="0.90939251409999999" blue="0.3382860305" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="bbClicked" destination="maI-gv-yeS" eventType="touchUpInside" id="Axk-Ad-dZQ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.40243011270000001" green="0.4983728462" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Wi-dm-0qQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrK-50-K3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="-418"/>
-        </scene>
-        <!--Yellow View Controller-->
-        <scene sceneID="YZ2-6x-7Y4">
-            <objects>
-                <viewController storyboardIdentifier="Yellow" id="ROh-jX-z1N" customClass="PTRXYellowViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yQQ-0S-Zd4"/>
-                        <viewControllerLayoutGuide type="bottom" id="uJh-l4-RmI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uAH-AK-h7s">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t9-zx-RSd">
-                                <rect key="frame" x="137" y="215" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="yyClicked" destination="ROh-jX-z1N" eventType="touchUpInside" id="1j4-0k-do5"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.93573794160000001" green="0.90939251409999999" blue="0.3382860305" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aip-nV-gEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="787" y="-418"/>
+            <point key="canvasLocation" x="1255" y="964"/>
         </scene>
     </scenes>
     <resources>

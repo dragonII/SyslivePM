@@ -8,6 +8,7 @@
 
 #import "PTRXLoginViewController.h"
 #import "PTRXMainViewController.h"
+#import "PTRXContentNavigationViewController.h"
 
 @interface PTRXLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -89,12 +90,26 @@
 - (void)gotoNextView
 {
     NSLog(@"In gotoNextView");
+    
+    if(self.mainController.contentNVController == nil)
+    {
+        self.mainController.contentNVController = [self.mainController.storyboard instantiateViewControllerWithIdentifier:@"ContentNavigation"];
+        self.mainController.contentNVController.mainController = self.mainController;
+    }
+    
+    [self.view removeFromSuperview];
+    [self.mainController.view insertSubview:self.mainController.contentNVController.view atIndex:0];
 }
 
 - (BOOL)loginToServer
 {
     [NSThread sleepForTimeInterval:2];
     return YES;
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc: %@", self);
 }
 
 @end

@@ -59,9 +59,9 @@
 - (void)initContentNavigationButtons
 {
     CGFloat topMargin = 20.0f;
-    CGFloat bottomMargin = 20.0f;
+    //CGFloat bottomMargin = 20.0f;
     CGFloat margin = 10.0f;
-    CGFloat width = self.view.bounds.size.width;
+    //CGFloat width = self.view.bounds.size.width;
     CGFloat height = self.view.bounds.size.height;
     //CGFloat itemWidth = 70.0f;
     CGFloat itemWidth = 56.0f;
@@ -73,13 +73,13 @@
         itemHeight = 97.0f;
     }
     
-    NSInteger totalRows = 3;
-    NSInteger totalCols = 3;
+    //NSInteger totalRows = 3;
+    //NSInteger totalCols = 3;
     NSInteger totalButs = 9;
     
     
-    NSInteger rowIndex = 0;
-    NSInteger colIndex = 0;
+    //NSInteger rowIndex = 0;
+    //NSInteger colIndex = 0;
     
     CGFloat x, y, w, h;
     
@@ -149,7 +149,7 @@
             
         }
         button.frame = CGRectMake(x, y, w, h);
-        NSLog(@"Button %d: %f, %f, %f, %f", butIndex, x, y, w, h);
+        //NSLog(@"Button %d: %f, %f, %f, %f", butIndex, x, y, w, h);
         [self.view addSubview:button];
     }
 }

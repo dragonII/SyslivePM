@@ -119,13 +119,19 @@ const int TotalNumPages = 3;
     CGFloat buttonY = self.scrollView.bounds.size.height - buttonHeight - margin;
     CGFloat buttonX;
     
+    NSString *titleString = NSLocalizedString(@"Next", @"Title text on 'next' button");
+    
     for(int i = 0; i < TotalNumPages; i++)
     {
+        if(i == TotalNumPages - 1)
+        {
+            titleString = NSLocalizedString(@"Finish", @"Title text on 'finish' button");
+        }
         buttonX = (i + 1) * width - buttonWidth - margin;
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.tag = 2000 + i;
-        [button setTitle:[NSString stringWithFormat:@"Next %d", i] forState:UIControlStateNormal];
+        [button setTitle:titleString forState:UIControlStateNormal];
         button.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
         [button addTarget:self action:@selector(nextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         

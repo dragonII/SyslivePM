@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class PTRXMainViewController;
+
 @interface PTRXLoginViewController : UIViewController
+
+@property (strong, nonatomic)PTRXMainViewController *mainController;
 
 @end

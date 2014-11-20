@@ -7,13 +7,12 @@
 //
 
 #import "PTRXMainViewController.h"
-#import "PTRXBlueViewController.h"
-#import "PTRXYellowViewController.h"
+//#import "PTRXBlueViewController.h"
+//#import "PTRXYellowViewController.h"
 #import "PTRXWizardViewController.h"
+#import "PTRXLoginViewController.h"
 
 @interface PTRXMainViewController ()
-
-@property (strong, nonatomic) PTRXWizardViewController *wizardViewController;
 
 @end
 
@@ -31,15 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    /*
-    self.blueViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Blue"];
-    [self.view insertSubview:self.blueViewController.view atIndex:0];
-    self.blueViewController.mainController = self;
-     */
     
-    self.wizardViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Wizard"];
-    [self.view insertSubview:self.wizardViewController.view atIndex:0];
+    self.wizardController = [self.storyboard instantiateViewControllerWithIdentifier:@"Wizard"];
+    self.wizardController.mainController = self;
+    [self.view insertSubview:self.wizardController.view atIndex:0];
 }
 
 
@@ -47,14 +41,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    /*
     if(!self.blueViewController.view.superview)
     {
         self.blueViewController = nil;
     } else {
         self.yellowViewController = nil;
     }
+     */
 }
 
+/*
 - (IBAction)switchViews:(id)sender
 {
     if(!self.yellowViewController.view.superview)
@@ -80,5 +77,6 @@
         [self.view insertSubview:self.blueViewController.view atIndex:0];
     }
 }
+ */
 
 @end

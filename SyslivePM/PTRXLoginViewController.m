@@ -19,9 +19,9 @@
 @end
 
 @implementation PTRXLoginViewController
-{
-    PTRXMainViewController *_mainViewController;
-}
+
+//PTRXMainViewController *_mainViewController;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.passwdTextField
+    
+    self.mainController.wizardController = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,14 +89,6 @@
 - (void)gotoNextView
 {
     NSLog(@"In gotoNextView");
-    if(_mainViewController == nil)
-    {
-        _mainViewController = [[PTRXMainViewController alloc] init];
-    }
-    
-    [self.view addSubview:_mainViewController.view];
-    [self addChildViewController:_mainViewController];
-    [_mainViewController didMoveToParentViewController:self];
 }
 
 - (BOOL)loginToServer

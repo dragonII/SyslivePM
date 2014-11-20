@@ -8,6 +8,7 @@
 
 #import "PTRXWizardViewController.h"
 #import "PTRXLoginViewController.h"
+#import "PTRXMainViewController.h"
 
 const int TotalNumPages = 3;
 
@@ -15,7 +16,6 @@ const int TotalNumPages = 3;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end
 
@@ -23,7 +23,7 @@ const int TotalNumPages = 3;
 {
     BOOL _firstTime;
     UIStatusBarStyle _statusBarStyle;
-    PTRXLoginViewController *_loginViewController;
+    //PTRXLoginViewController *_loginViewController;
     
 }
 
@@ -32,6 +32,7 @@ const int TotalNumPages = 3;
     return _statusBarStyle;
 }
 
+/* Only called when xib file used */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,22 +50,16 @@ const int TotalNumPages = 3;
 {
     [super viewDidLoad];
     
-    
-    //NSLog(@"Setting _firstTime");
     _firstTime = YES;
-    
-    //[self addSwipeGestureToScrollView];
 }
 
 - (void)viewWillLayoutSubviews
 {
-    NSLog(@"viewWillLayoutSubviews");
     [super viewWillLayoutSubviews];
     
     if(_firstTime)
     {
         _firstTime = NO;
-        
         [self initScrollView];
     }
 }
@@ -82,7 +77,6 @@ const int TotalNumPages = 3;
     self.pageControl.currentPage = 0;
     
     [self addButtonsToScrollView];
-    self.testLabel.text = @"ABCDEFG";
     [self addSwipeGestureToScrollView];
 
 }
@@ -105,11 +99,10 @@ const int TotalNumPages = 3;
         [self showLoginController];
         [self dismissFromParentViewController];
     } else {
-        [UIView animateWithDuration:0.3
+        [UIView animateWithDuration:0.5
                          animations:^{
                              self.scrollView.contentOffset = CGPointMake((currentPage + 1) * width, 0);
                          } completion:^(BOOL finished){
-                             NSLog(@"complete");
                              self.pageControl.currentPage++;
                          }];
     }
@@ -163,6 +156,7 @@ const int TotalNumPages = 3;
     }
 }
 
+/*
 - (void)showLoginController2
 {
     if(_loginViewController == nil)
@@ -179,7 +173,9 @@ const int TotalNumPages = 3;
                                 completion:nil];
     }
 }
+ */
 
+/*
 - (void)showLoginController
 {
     if(_loginViewController == nil)
@@ -200,6 +196,32 @@ const int TotalNumPages = 3;
                          } completion:^(BOOL finished) {
                              [_loginViewController didMoveToParentViewController:self];
                          }];
+    }
+}
+ */
+
+/*
+ 
+ self.wizardViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Wizard"];
+ self.wizardViewController.mainController = self;
+ [self.view insertSubview:self.wizardViewController.view atIndex:0];
+ */
+
+- (void)showLoginController
+{
+    if(self.mainController.loginController == nil)
+    {
+        [self.view removeFromSuperview];
+        self.mainController.loginController = [self.mainController.storyboard instantiateViewControllerWithIdentifier:@"Login"];
+        self.mainController.loginController.mainController = self.mainController;
+        [self.mainController.view insertSubview:self.mainController.loginController.view atIndex:0];
+        self.mainController.loginController.view.alpha = 0.0f;
+        
+        [UIView animateWithDuration:0.8f
+                         animations:^{
+                             self.mainController.loginController.view.alpha = 1.0f;
+                         }];
+        //[self.mainController.view insertSubview:self.mainController.loginController.view atIndex:0];
     }
 }
 
@@ -234,7 +256,7 @@ const int TotalNumPages = 3;
 
 - (void)dealloc
 {
-    NSLog(@"dealloc");
+    NSLog(@"dealloc: %@", self);
 }
 
 @end

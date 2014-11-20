@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F21397C1A1C380C00A0DA4A /* PTRXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F21397A1A1C380C00A0DA4A /* PTRXLoginViewController.m */; };
-		2F21397D1A1C380C00A0DA4A /* PTRXLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F21397B1A1C380C00A0DA4A /* PTRXLoginViewController.xib */; };
 		2F2139971A1C772E00A0DA4A /* PTRXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2139961A1C772E00A0DA4A /* PTRXMainViewController.m */; };
 		2F21399A1A1C779600A0DA4A /* PTRXBlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2139991A1C779600A0DA4A /* PTRXBlueViewController.m */; };
 		2F21399D1A1C77A600A0DA4A /* PTRXYellowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F21399C1A1C77A600A0DA4A /* PTRXYellowViewController.m */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		2F2139791A1C380C00A0DA4A /* PTRXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRXLoginViewController.h; sourceTree = "<group>"; };
 		2F21397A1A1C380C00A0DA4A /* PTRXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTRXLoginViewController.m; sourceTree = "<group>"; };
-		2F21397B1A1C380C00A0DA4A /* PTRXLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PTRXLoginViewController.xib; sourceTree = "<group>"; };
 		2F2139951A1C772E00A0DA4A /* PTRXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRXMainViewController.h; sourceTree = "<group>"; };
 		2F2139961A1C772E00A0DA4A /* PTRXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTRXMainViewController.m; sourceTree = "<group>"; };
 		2F2139981A1C779600A0DA4A /* PTRXBlueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTRXBlueViewController.h; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				2FEDD7601A1B986500C0B33B /* PTRXWizardViewController.m */,
 				2F2139791A1C380C00A0DA4A /* PTRXLoginViewController.h */,
 				2F21397A1A1C380C00A0DA4A /* PTRXLoginViewController.m */,
-				2F21397B1A1C380C00A0DA4A /* PTRXLoginViewController.xib */,
 				2F2139951A1C772E00A0DA4A /* PTRXMainViewController.h */,
 				2F2139961A1C772E00A0DA4A /* PTRXMainViewController.m */,
 				2F2139981A1C779600A0DA4A /* PTRXBlueViewController.h */,
@@ -255,7 +252,6 @@
 				2FEDD7431A1B97EA00C0B33B /* Images.xcassets in Resources */,
 				2FEDD7351A1B97EA00C0B33B /* InfoPlist.strings in Resources */,
 				2F21399F1A1C784D00A0DA4A /* MainView.storyboard in Resources */,
-				2F21397D1A1C380C00A0DA4A /* PTRXLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

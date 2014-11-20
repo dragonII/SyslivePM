@@ -60,6 +60,62 @@
             </objects>
             <point key="canvasLocation" x="356" y="964"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="xZY-4n-u7J">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="olY-nH-m0y" customClass="PTRXLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x4A-Xk-0HK"/>
+                        <viewControllerLayoutGuide type="bottom" id="otB-uX-77g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q8O-uD-XmU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="syslivelogo" translatesAutoresizingMaskIntoConstraints="NO" id="VaB-lg-kzX">
+                                <rect key="frame" x="50" y="57" width="220" height="97"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-j7-YhS">
+                                <rect key="frame" x="60" y="162" width="201" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLw-mY-tHb">
+                                <rect key="frame" x="60" y="200" width="201" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89a-YN-aPG">
+                                <rect key="frame" x="60" y="238" width="201" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" backgroundImage="LoginButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="olY-nH-m0y" eventType="touchUpInside" id="eXW-T7-r9k"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EWd-mo-RRX">
+                                <rect key="frame" x="150" y="288" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="89a-YN-aPG" id="IXz-81-zoC"/>
+                        <outlet property="nameTextField" destination="M0t-j7-YhS" id="5mc-Me-pnP"/>
+                        <outlet property="passwdTextField" destination="YLw-mY-tHb" id="rdY-bV-HWi"/>
+                        <outlet property="spinner" destination="EWd-mo-RRX" id="3Am-xv-1aq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wxJ-MD-P9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="964"/>
+        </scene>
         <!--Blue View Controller-->
         <scene sceneID="kr8-wV-Hlq">
             <objects>
@@ -89,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Wi-dm-0qQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846" y="267"/>
+            <point key="canvasLocation" x="356" y="-418"/>
         </scene>
         <!--Yellow View Controller-->
         <scene sceneID="YZ2-6x-7Y4">
@@ -119,9 +175,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aip-nV-gEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="265"/>
+            <point key="canvasLocation" x="787" y="-418"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LoginButton" width="11" height="24"/>
+        <image name="syslivelogo" width="443" height="221"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

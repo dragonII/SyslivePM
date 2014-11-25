@@ -67,12 +67,29 @@ const int TotalNumPages = 3;
 - (void)initScrollView
 {
     NSLog(@"initScrollView");
+    
+    UIImageView *view1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Wizard1"]];
+    UIImageView *view2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Wizard2"]];
+    UIImageView *view3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Wizard3"]];
+    
     //self.scrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width * TotalNumPages, self.scrollView.bounds.size.height);
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.bounces = YES;
     
+    CGFloat width = self.view.bounds.size.width;
+    CGFloat height = self.view.bounds.size.height;
+    
+    view1.frame = CGRectMake(0, 0, width, height);
+    view2.frame = CGRectMake(width, 0, width, height);
+    view3.frame = CGRectMake(width * 2, 0, width, height);
+    
+    [self.view addSubview:view1];
+    [self.view addSubview:view2];
+    [self.view addSubview:view3];
+    
     self.pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
+    self.pageControl.pageIndicatorTintColor = [UIColor colorWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:0.8f];
     self.pageControl.numberOfPages = TotalNumPages;
     self.pageControl.currentPage = 0;
     
